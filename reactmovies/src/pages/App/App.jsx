@@ -9,7 +9,10 @@ import ActorsPage from "../ActorsPage/ActorsPage";
 
 export default function App() {
   const [user, setUser] = useState(
-    null
+      {
+    username: "John",
+    password: "123"
+  }
   );
   return (<main className="App">
           {user ? <>
@@ -21,7 +24,7 @@ export default function App() {
                   <Route path="/actors">
                       <ActorsPage/>
                   </Route>
-                  <Redirect to="/"/>
+                  <Redirect to="/movies"/>
               </Switch>
           </> : <LoginPage setUser={setUser}/>}
       </main>);
