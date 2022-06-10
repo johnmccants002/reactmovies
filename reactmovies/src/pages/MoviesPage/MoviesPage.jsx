@@ -4,14 +4,16 @@ import MovieCard from "../../components/MovieCard";
 export default function MoviesPage({user}) {
 
     const datamovies = movies.map(t => 
-        <li><MovieCard movie={t}/></li>
+        <div><MovieCard movie={t}/></div>
         );
 
 
     return (
         <>
-            <h1>Movies</h1>
-            <ul>{datamovies}</ul>
+        <br/>
+        <br/>
+        <br/>
+            <div>{datamovies}</div>
         </>
     );
 }

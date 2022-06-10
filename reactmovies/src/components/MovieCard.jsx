@@ -27,13 +27,15 @@ export default function MovieCard({movie}) {
             <MovieDetailPage movie={movie}/> 
             <button onClick={toggleShowDetails}>Hide Details</button>
             </>:
-            <>
-            <button onClick={toggleShowDetails}>{movie.title}</button>
-            <img 
+            <div className="movie-card">
+            <img className="poster"
             src={movie.poster_path}
             alt="new"
             />
-            </>
+            <div>
+            <button onClick={toggleShowDetails}>{movie.title}</button>
+            </div>
+            </div>
         }
 
         </div>

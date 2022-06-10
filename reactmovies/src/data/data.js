@@ -1,3 +1,5 @@
+const { act } = require("react-dom/test-utils");
+
 const movies = [
     {
       "poster_path": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
@@ -215,9 +217,29 @@ const movies = [
       ]
     }
   ]
+
+  function getActors() {
+    console.log("In get actors")
+    var actors = [];
+    for (var i = 0; i < movies.length; i++) {
+      for (var j = 0; j < movies[i].cast.length; j++) {
+        let property = movies[i].cast[j];
+        console.log("This is the property " + property)
+        if (actors.includes(property)) {
+          console.log("Already contains: ", property);
+        } else {
+          actors.push(property);
+        }
+      }
+    }
+    console.log("This is the actors: ", actors);
+    return actors;
+    
+  }
   
   
   
   module.exports = {
-    movies
+    movies,
+    getActors,
   }

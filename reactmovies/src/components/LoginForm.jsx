@@ -4,7 +4,6 @@ import {useState} from 'react';
 export default function LoginForm({setUser}) {
     const [credentials, setCredentials] = useState({
         username: '',
-        password: ''
     });
     const [error, setError] = useState('');
 
@@ -16,12 +15,7 @@ export default function LoginForm({setUser}) {
     async function handleSubmit(evt) {
         evt.preventDefault();
         setUser(credentials);
-        // try {
-        //     const user = await usersService.login(credentials);
-        //     setUser(user);
-        // } catch {
-        //     setError('Log In Failed - Try Again');
-        // }
+
     }
 
     return (
@@ -30,9 +24,6 @@ export default function LoginForm({setUser}) {
                 <form autoComplete="off">
                     <label>Username</label>
                     <input type="text" name="username" value={credentials.username} onChange={handleChange} required/>
-                    <label>Password</label>
-                    <input type="password" name="password" value={credentials.password} onChange={handleChange}
-                           required/>
                     <button type="submit">LOG IN</button>
                 </form>
             </div>

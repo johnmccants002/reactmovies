@@ -5,15 +5,18 @@ import {Route, Switch, Redirect} from "react-router-dom";
 import LoginPage from "../Authentication/LoginPage";
 import MoviesPage from "../MoviesPage/MoviesPage";
 import ActorsPage from "../ActorsPage/ActorsPage";
+import {movies} from "../../data/data.js"
 
 
 export default function App() {
   const [user, setUser] = useState(
-      {
-    username: "John",
-    password: "123"
-  }
+      
+    null
+  
   );
+
+
+
   return (<main className="App">
           {user ? <>
               <NavBar user={user} setUser={setUser}/>
